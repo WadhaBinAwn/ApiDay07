@@ -75,7 +75,7 @@ public class JobDAO {
         Class.forName("org.sqlite.JDBC");
         Connection conn = DriverManager.getConnection(URL);
         PreparedStatement st;
-        if (filterDto != null && filterDto!= null){
+        if (filterDto.getMin_salary() != null && filterDto.getLimit()!= null){
 
             st = conn.prepareStatement(SELECT_Jobs_WITH_Min_PAGINATION);
         st.setDouble(1,filterDto.getMin_salary());
